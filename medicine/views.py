@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup as bs
 import pywhatkit as kit
 import mysql.connector
 from django.contrib import messages
+
 FirstName=''
 LastName=''
 username=''
@@ -68,6 +69,7 @@ def login(request):
         if t==():
             messages.warning(request, "Invalid username/password")
         else:
+            messages.success(request, "Logged in/Signed up successfully")
             return render(request, 'welcome.html')
     return render(request, 'login.html')
 
@@ -108,6 +110,7 @@ def signup(request):
                 c="insert into users Values('{}','{}','{}','{}','{}')".format(FirstName,LastName,username,email,passwd)
                 cursor.execute(c)
                 m.commit()
+                messages.success(request, "Logged in/Signed up successfully")
                 return render(request, 'welcome.html')
             else:
                 messages.warning(request, "Entered password doesn't have characters from A-Z,a-z,0-9 and/or special characters.")
@@ -127,6 +130,9 @@ def shopping(request):
 def home2(request):
     return render(request, 'home2.html')
 
+def welcome(request):
+    messages.success(request, "Logged in/Signed up successfully")
+    return render(request, 'welcome.html')
     
 def search(request):
     if request.method == 'POST':
