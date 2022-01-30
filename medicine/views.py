@@ -52,6 +52,12 @@ def medicinesfind(request):
 def reminder(request):
     return render(request, 'reminder.html')
 
+def login1(request):
+    return render(request, 'login.html')
+
+def signup1(request):
+    return render(request, 'signup.html')
+
 def login(request):
     global username,passwd
     if request.method=='POST':
