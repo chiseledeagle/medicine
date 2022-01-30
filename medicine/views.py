@@ -120,6 +120,7 @@ def custom(request):
     return render(request, 'Customer_care.html')
 
 def welcome(request):
+    messages.success(request, "Logged in/Signed up successfully")
     return render(request, 'welcome.html')
   
 def search(request):
