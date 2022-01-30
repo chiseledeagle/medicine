@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>MEDICAL JOURNAL | GET REMINDERS</title>
+	<title>MEDICAL JOURNAL | SIGNUP</title>
 	<link rel = "icon" href =  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAUUPWlNAkfJj6skSkbOxdormyXBgykdCnvQ&usqp=CAU" type = "image/x-icon"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device width, initial=1.0">
@@ -288,16 +288,24 @@
     <centre><input type="text" name="LastName" placeholder="Enter last name"></centre> <br><br>
     <centre><input type="text" name="username" placeholder="Enter a username"></centre><br><br>
     <centre><input type="text" name="email" placeholder="Enter your email"></centre><br><br>
-    <centre><input type="text" name="passwd" placeholder="Enter password"></centre><br><br>
+    <centre><input  name="passwd" placeholder="Enter password"></centre><br><br>
     <center><p class="b">
         Password must contain 1 character from A-Z,a-z and 0-9.<br>
         Password must have a special character .i.e.(?=.*[-+_!@#$%^&*., ?]).+$<br>
     </p><br></center>
     
-    <centre><input type="text" name="passc" placeholder="Confirm password"></centre><br><br>
+    <centre><input type="password" name="passc" placeholder="Confirm password"></centre><br><br>
     <br>
     <centre><a href="#"><button class="btn" type="submit">Click to create account</button></centre></a>
 </form>
+<script>function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }</script>
 			</div>
 		</div>
 	</div>
