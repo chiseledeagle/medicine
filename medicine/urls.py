@@ -12,11 +12,9 @@ urlpatterns = [
     path('Customer_care.html',views.custom),
     path('result3.html',views.patient),
     path('reminder.html',views.reminder),
-    path('home2.html',views.home2),
-    path('Shopping.html',views.shopping),
     path('welcome.html',views.welcome),
-    path('signup.html',views.signup1),
-    path('login.html',views.login1),
+    path('signup.html',views.signup),
+    path('login.html',views.login),
     path('signup',views.signup),
     path('login',views.login)
 ]
