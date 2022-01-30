@@ -18,8 +18,8 @@ urlpatterns = [
     path('Shopping.html',views.shopping),
     path('welcome.html',views.welcome),
     path('Search_Result.html',views.searchco),
-    path('signup.html',views.signup),
-    path('login.html',views.login),
+    path('signup.html',views.signup1),
+    path('login.html',views.login1),
     path('signup',views.signup),
     path('login',views.login)
 ]
