@@ -1,6 +1,5 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from django.contrib.auth.forms import UserCreationForm, User
 import requests
 import bs4
 from bs4 import BeautifulSoup as bs
@@ -18,6 +17,7 @@ passc=''
 
 def heading(request):
     return render(request,'home.html')
+
 def patient(request):
     if request.method=="GET":
         val4=request.GET['patientnum']
@@ -42,7 +42,6 @@ def patient(request):
     else:
         return render(request, 'result3.html')
     
-
 def home(request):
     return render(request, 'home.html')
 
@@ -51,12 +50,6 @@ def medicinesfind(request):
 
 def reminder(request):
     return render(request, 'reminder.html')
-
-def login1(request):
-    return render(request, 'login.html')
-
-def signup1(request):
-    return render(request, 'signup.html')
 
 def login(request):
     global username,passwd
@@ -75,7 +68,6 @@ def login(request):
         if t==():
             messages.warning(request, "Invalid username/password")
         else:
-            messages.success(request, "Logged in/Signed up successfully")
             return render(request, 'welcome.html')
     return render(request, 'login.html')
 
@@ -88,8 +80,6 @@ def count_chars(str):
           else: special_ctr += 1
      return upper_ctr, lower_ctr, number_ctr, special_ctr
            
-
-
 def signup(request):
     global FirstName,LastName,username,email,passwd
     if request.method=='POST':
@@ -116,7 +106,6 @@ def signup(request):
                 c="insert into users Values('{}','{}','{}','{}','{}')".format(FirstName,LastName,username,email,passwd)
                 cursor.execute(c)
                 m.commit()
-                messages.success(request, "Logged in/Signed up successfully")
                 return render(request, 'welcome.html')
             else:
                 messages.warning(request, "Entered password doesn't have characters from A-Z,a-z,0-9 and/or special characters.")
@@ -130,16 +119,9 @@ def pharmacy(request):
 def custom(request):
     return render(request, 'Customer_care.html')
 
-def shopping(request):
-    return render(request, 'Shopping.html')
-
-def home2(request):
-    return render(request, 'home2.html')
-
 def welcome(request):
-    messages.success(request, "Logged in/Signed up successfully")
     return render(request, 'welcome.html')
-    
+  
 def search(request):
     if request.method == 'POST':
         search = request.POST['search']
