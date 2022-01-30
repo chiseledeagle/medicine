@@ -36,6 +36,14 @@
         color: #fff;
         letter-spacing: 5px;
     }
+    #message{
+        border: 0px solid rgb(255, 108, 108);
+        border-radius: 5px;
+        border-width: 0px;
+        padding: 5px;
+        background-color: #ff6c6c;
+        width: 490px;
+      }
     #mySidenav a {
         position: absolute;
         left: -107px;
@@ -138,6 +146,7 @@
         width: 40%;
         height: 3%;
         border: 1px;
+        border-style: solid;
         border-radius: 05px;
         padding: 8px 15px 8px  15px;
         margin:10px 0px 15px 0 px
@@ -150,6 +159,11 @@
         border-radius: 05px;
         padding: 8px 15px 8px  15px;
         margin:10px 0px 15px 0 px
+    }
+    h5{
+        text-align: left;
+        padding-left: 29%;
+        font-size: 15px;
     }
     input[name=fn]{
         width: 18%;
@@ -247,20 +261,30 @@
                   <center>            
                     <img  width="200" src="https://media.giphy.com/media/EAkvNkimgOxvIryUzE/giphy.gif">
                 </center> <br>
-                {% for message in messages %}
-                  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" id="message">
-                    <strong>Error:</strong> {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
-                {% endfor %}</center>
+                <h4>Don't have an account? <a href="signup.html" >Signup</a></h4><br>
+                <center>
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" id="message">
+                  <strong>Error:</strong> {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+              {% endfor %}</center><br>
                 <form action="#" method="POST">
                     {% csrf_token %}
                     {% load static %}
                     <centre><input type="text" name="username" placeholder="Enter a username"></centre><br><br>
-                    <centre><input type="text" name="passwd" placeholder="Enter password"></centre><br><br>
-                    <centre><a href="#"><button class="btn" type="submit">Click to create account</button></centre></a>
+                    <centre><input type="password" name="passwd" placeholder="Enter password"></centre><br><br>
+                    <h5>Forgot password?<a href="Customer_care.html" >Contact Us</a></h5><br>
+                    <centre><a href="#"><button class="btn" type="submit">Login</button></centre></a>
                 </form>
-
+                <script>function myFunction() {
+                    var x = document.getElementById("myInput");
+                    if (x.type === "password") {
+                      x.type = "text";
+                    } else {
+                      x.type = "password";
+                    }
+                  }</script>
 			</div>
 		</div>
 	</div>
