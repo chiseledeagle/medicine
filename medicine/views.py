@@ -13,6 +13,8 @@ username=''
 email=''
 passws=''
 passc=''
+email1=''
+complain=''
 
 
 def heading(request):
